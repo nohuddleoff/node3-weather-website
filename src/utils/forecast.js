@@ -12,7 +12,8 @@ const forecast = (lat, lon, callback) => {
             return callback('Uable to find location', undefined)
         }
         
-        callback(undefined, body.current.weather_descriptions[0] +". It is currently " + body.current.temperature + " degrees out in " + body.request.query + ", but It feel like " + body.current.feelslike + " degrees")
+        callback(undefined, body.current.weather_descriptions[0] +". It is currently " + body.current.temperature + " degrees out in " + body.request.query + ", but It feel like " + body.current.feelslike + " degrees. " +
+        "Humidity is " + body.current.humidity + "% and Wind Speed is " + body.current.wind_speed + "mph")
     })
 }
 
